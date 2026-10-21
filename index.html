@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="فيه حرامي متنكّر وسطكم… هتعرف تمسكه؟ اللعبة بتنزل 1 نوفمبر.">
+<meta property="og:title" content="امسك حرامي">
+<meta property="og:description" content="فيه حرامي متنكّر وسطكم… هتعرف تمسكه؟ اللعبة بتنزل 1 نوفمبر.">
+<meta property="og:image" content="icon.png">
+<link rel="icon" href="favicon-32.png">
+<title>امسك حرامي</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Readex+Pro:wght@400;600;700&display=swap">
+<style>
+/* Layout: night-village poster page — wanted poster hero, brass countdown board, movement demo card, vague teaser points, follow links. Single dark look by choice. */
+:root{
+  --night:#141b2d; --night-2:#1d2740; --ink-3:#2a3657;
+  --paper:#fff6e6; --muted:#aab4ca; --brass:#f4b43c; --brass-d:#b9821c; --siren:#e9474f; --cop:#3f7fe6;
+  --display:"Lalezar","Readex Pro",system-ui,sans-serif;
+  --body:"Readex Pro",system-ui,"Segoe UI",Tahoma,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{direction:rtl;margin:0;background:var(--night);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.15;margin:0;text-wrap:balance}
+
+/* sky with lanterns */
+.sky{position:relative;overflow:hidden;background:radial-gradient(120% 80% at 70% 0%,#2b3a63 0%,var(--night) 60%)}
+#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-block:56px 40px}
+.hero .txt{display:grid;gap:16px;min-width:0}
+.eyebrow{font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--brass);display:flex;gap:8px;align-items:center}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--siren);box-shadow:0 0 0 0 rgba(233,71,79,.7);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(233,71,79,0)}100%{box-shadow:0 0 0 0 rgba(233,71,79,0)}}
+h1{font-size:clamp(56px,11vw,112px);color:var(--brass);text-shadow:0 6px 0 #6b4510,0 14px 30px rgba(0,0,0,.45)}
+.lede{font-size:clamp(18px,2.6vw,22px);margin:0;max-width:30ch}
+.lede b{color:var(--brass)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{font-family:var(--body);font-weight:700;font-size:17px;border-radius:14px;padding:13px 22px;text-decoration:none;border:0;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.btn.p{background:var(--brass);color:var(--night);box-shadow:0 5px 0 var(--brass-d)}
+.btn.p:active{transform:translateY(3px);box-shadow:0 2px 0 var(--brass-d)}
+.btn.s{background:transparent;color:var(--paper);border:1.5px solid rgba(255,246,230,.28)}
+.btn:focus-visible{outline:3px solid var(--cop);outline-offset:3px}
+.poster{justify-self:center;width:min(100%,380px);aspect-ratio:1;max-width:100%;border-radius:28px;transform:rotate(-4deg);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 6px rgba(255,246,230,.06);animation:sway 6s ease-in-out infinite;display:block}
+@keyframes sway{50%{transform:rotate(2deg) translateY(-6px)}}
+
+/* countdown board */
+.board{position:relative;margin-block:8px 0;background:var(--night-2);border:1px solid rgba(255,246,230,.08);border-radius:24px;padding:22px 18px;display:grid;gap:14px;justify-items:center}
+.board .lbl{font-size:15px;color:var(--muted)}
+.cd{display:flex;gap:12px;direction:ltr;flex-wrap:wrap;justify-content:center}
+.unit{display:grid;justify-items:center;gap:4px;min-width:0}
+.digits{font-family:var(--display);font-size:clamp(44px,9vw,76px);line-height:1;padding:14px 14px 6px;min-width:2.1ch;text-align:center;background:linear-gradient(var(--ink-3) 50%,#24304d 50%);border-radius:14px;color:var(--brass);font-variant-numeric:tabular-nums;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
+.digits.tick{animation:flip .35s ease}
+@keyframes flip{0%{transform:rotateX(0)}50%{transform:rotateX(70deg);filter:brightness(1.4)}100%{transform:rotateX(0)}}
+.unit span{font-size:14px;color:var(--muted)}
+.date{font-weight:600}
+.date b{color:var(--brass)}
+
+section{padding-block:56px 8px}
+.sec-h{display:grid;gap:6px;margin-bottom:22px}
+.sec-h h2{font-size:clamp(32px,5vw,46px)}
+.sec-h p{margin:0;color:var(--muted);max-width:60ch}
+
+/* demo */
+.demo{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center}
+.phone{justify-self:center;width:min(100%,300px);aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:#000;border:6px solid #0c1120;box-shadow:0 24px 50px rgba(0,0,0,.45);position:relative}
+.phone video{width:100%;height:100%;object-fit:cover;display:block;filter:blur(7px) saturate(1.2);transform:scale(1.08)}
+.phone .veil{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(transparent 40%,rgba(10,14,26,.75));}
+.phone .veil span{font-family:var(--display);font-size:30px;color:var(--paper);background:rgba(20,27,45,.75);padding:10px 16px 6px;border-radius:12px;transform:rotate(-3deg)}
+.demo .txt{display:grid;gap:14px;min-width:0}
+.demo ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.demo li{display:flex;gap:10px;align-items:flex-start}
+.demo li kbd{font-family:var(--body);font-size:13px;font-weight:700;background:var(--ink-3);border-radius:7px;padding:2px 8px;white-space:nowrap}
+
+/* clues */
+.clues{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.clue{background:var(--night-2);border-radius:20px;padding:22px 20px;display:grid;gap:8px;align-content:start;border-top:4px solid var(--c,var(--brass))}
+.clue .ic{font-size:30px;line-height:1}
+.clue h3{font-family:var(--display);font-weight:400;font-size:26px;margin:0;line-height:1.2}
+.clue p{margin:0;color:var(--muted)}
+.redact{background:var(--paper);color:var(--paper);border-radius:3px;padding:0 4px;user-select:none}
+
+/* follow */
+.follow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.soc{display:flex;gap:12px;align-items:center;background:var(--night-2);border:1px solid rgba(255,246,230,.08);border-radius:18px;padding:16px 18px;text-decoration:none;transition:transform .2s,border-color .2s;min-width:0}
+.soc:hover{transform:translateY(-3px);border-color:var(--brass)}
+.soc:focus-visible{outline:3px solid var(--cop);outline-offset:3px}
+.soc .logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:700;flex:none}
+.soc b{display:block;font-size:17px}
+.soc small{color:var(--muted);direction:ltr;display:block;text-align:right}
+footer{padding-block:48px 40px;color:var(--muted);font-size:14px;text-align:center}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-block:32px 24px;text-align:center}
+  .hero .txt{justify-items:center}
+  .poster{width:min(56%,210px);order:-1}
+  .demo{grid-template-columns:1fr}
+  .clues,.follow{grid-template-columns:1fr}
+  .cd{gap:6px;flex-wrap:nowrap}
+  .digits{font-size:34px;padding:10px 8px 4px;border-radius:10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="sky">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header class="hero">
+      <div class="txt">
+        <div class="eyebrow" dir="rtl"><i></i> بلاغ عاجل من القرية</div>
+        <h1>امسك حرامي</h1>
+        <p class="lede">فيه حرامي <b>متنكّر</b> وسطكم… شكله زي أي حد، بس فيه حاجة واحدة بتفضحه. هتعرف تمسكه؟</p>
+        <div class="cta">
+          <a class="btn p" href="demo.html">👣 جرّب الحركة دلوقتي</a>
+          <a class="btn s" href="#follow">تابعنا</a>
+        </div>
+      </div>
+      <img class="poster" src="icon.png" alt="بوستر مطلوب: الحرامي المتنكّر ومكافأة مليون دولار" width="380" height="380">
+    </header>
+
+    <div class="board" role="timer" aria-live="off">
+      <div class="lbl">اللعبة بتنزل بعد</div>
+      <div class="cd" id="cd">
+        <div class="unit"><div class="digits" id="d">--</div><span>يوم</span></div>
+        <div class="unit"><div class="digits" id="h">--</div><span>ساعة</span></div>
+        <div class="unit"><div class="digits" id="m">--</div><span>دقيقة</span></div>
+        <div class="unit"><div class="digits" id="s">--</div><span>ثانية</span></div>
+      </div>
+      <div class="date" id="dateLine">الأحد <b>1 نوفمبر 2026</b> · بتوقيت القاهرة</div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section aria-labelledby="demoH">
+    <div class="demo">
+      <div class="phone">
+        <video src="teaser.mp4" poster="poster.jpg" autoplay muted loop playsinline aria-label="لقطة مموّهة من اللعبة"></video>
+        <div class="veil"><span>سرّي 🤫</span></div>
+      </div>
+      <div class="txt">
+        <div class="sec-h"><h2 id="demoH">امشي في القرية بنفسك</h2><p>جهّزنالك تجربة صغيرة: تتمشّى وسط أهل القرية وتحس بالحركة. بس كده… الباقي مستخبّي لحد يوم الإطلاق.</p></div>
+        <ul>
+          <li>🖥️ <span>على الكمبيوتر: <kbd>الأسهم</kbd> أو <kbd>W A S D</kbd> للمشي، و<kbd>Shift</kbd> للجري</span></li>
+          <li>📱 <span>على الموبايل: حرّك الدايرة اللي تحت وانت ماشي</span></li>
+          <li>👋 <span>جرّب تسلّم على الناس وترقص معاهم</span></li>
+        </ul>
+        <div class="cta"><a class="btn p" href="demo.html">ابدأ التجربة</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="whatH">
+    <div class="sec-h"><h2 id="whatH">إيه الحكاية؟</h2><p>مش هنقول كل حاجة… بس دي أول الخيوط.</p></div>
+    <div class="clues">
+      <article class="clue" style="--c:var(--brass)"><div class="ic">🏘️</div><h3>قرية مليانة ناس</h3><p>سوق ومحلات وناس رايحة وجاية… والكل شبه بعض.</p></article>
+      <article class="clue" style="--c:var(--siren)"><div class="ic">🦹</div><h3>واحد فيهم مش منهم</h3><p>متنكّر صح، بس <span class="redact" title="سر">مشيته</span> ممكن تفضحه لو ركّزت.</p></article>
+      <article class="clue" style="--c:var(--cop)"><div class="ic">👀</div><h3>عينك هي سلاحك</h3><p>العب مع صحابك وشوف مين فيكم عينه أحدّ. التفاصيل يوم 1 نوفمبر.</p></article>
+    </div>
+  </section>
+
+  <section id="follow" aria-labelledby="folH">
+    <div class="sec-h"><h2 id="folH">متفوّتش يوم الإطلاق</h2><p>كل يوم لغز جديد ومقاطع من القرية. تابعنا وكن أول واحد يلعب.</p></div>
+    <div class="follow">
+      <a class="soc" href="https://www.tiktok.com/@emsekharamy" target="_blank" rel="noopener"><span class="logo" style="background:#000;color:#fff;box-shadow:inset 2px 0 #25f4ee,inset -2px 0 #fe2c55">♪</span><span><b>تيك توك</b><small>@emsekharamy</small></span></a>
+      <a class="soc" href="https://www.instagram.com/emsekharamy/" target="_blank" rel="noopener"><span class="logo" style="background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4);color:#fff">◎</span><span><b>انستجرام</b><small>@emsekharamy</small></span></a>
+      <a class="soc" href="https://www.facebook.com/profile.php?id=61595523337529" target="_blank" rel="noopener"><span class="logo" style="background:#1877f2;color:#fff">f</span><span><b>فيسبوك</b><small>امسك حرامي</small></span></a>
+    </div>
+  </section>
+</main>
+<footer class="wrap">امسك حرامي · قريباً على الموبايل والكمبيوتر</footer>
+
+<script>
+(function(){
+  const target=Date.parse('2026-11-01T00:00:00+02:00');
+  const els={d:document.getElementById('d'),h:document.getElementById('h'),m:document.getElementById('m'),s:document.getElementById('s')};
+  const pad=n=>String(n).padStart(2,'0'); const last={};
+  function set(k,v){ if(last[k]===v) return; last[k]=v; const e=els[k]; e.textContent=v; e.classList.remove('tick'); void e.offsetWidth; e.classList.add('tick'); }
+  function tick(){
+    let ms=target-Date.now();
+    if(ms<=0){ document.querySelector('.board .lbl').textContent='اللعبة نزلت! 🎉'; ['d','h','m','s'].forEach(k=>set(k,'00')); return; }
+    const s=Math.floor(ms/1000); set('d',pad(Math.floor(s/86400))); set('h',pad(Math.floor(s%86400/3600))); set('m',pad(Math.floor(s%3600/60))); set('s',pad(s%60));
+    setTimeout(tick,1000-(Date.now()%1000));
+  }
+  tick();
+  // twinkling stars + drifting lanterns
+  const c=document.getElementById('stars'), x=c.getContext('2d'); let W,H,st=[],ln=[];
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){ const r=c.getBoundingClientRect(), d=Math.min(2,devicePixelRatio||1); W=r.width; H=r.height; c.width=W*d; c.height=H*d; x.setTransform(d,0,0,d,0,0);
+    st=Array.from({length:Math.round(W*H/5000)},()=>({x:Math.random()*W,y:Math.random()*H*.7,r:Math.random()*1.4+.3,p:Math.random()*6}));
+    ln=Array.from({length:W<600?4:7},()=>({x:Math.random()*W,y:H*.2+Math.random()*H*.6,v:.12+Math.random()*.2,p:Math.random()*6})); }
+  function draw(t){ x.clearRect(0,0,W,H);
+    for(const s of st){ x.globalAlpha=.35+.35*Math.sin(t/900+s.p); x.fillStyle='#fff6e6'; x.beginPath(); x.arc(s.x,s.y,s.r,0,7); x.fill(); }
+    for(const l of ln){ if(!reduce){ l.y-=l.v; if(l.y<-30){ l.y=H+20; l.x=Math.random()*W; } }
+      const fx=l.x+Math.sin(t/1400+l.p)*8; x.globalAlpha=.55; const g=x.createRadialGradient(fx,l.y,0,fx,l.y,26); g.addColorStop(0,'rgba(244,180,60,.55)'); g.addColorStop(1,'rgba(244,180,60,0)'); x.fillStyle=g; x.beginPath(); x.arc(fx,l.y,26,0,7); x.fill();
+      x.globalAlpha=.9; x.fillStyle='#f4b43c'; x.beginPath(); x.roundRect?x.roundRect(fx-5,l.y-7,10,14,3):x.rect(fx-5,l.y-7,10,14); x.fill(); }
+    x.globalAlpha=1; if(!reduce) requestAnimationFrame(draw); }
+  size(); addEventListener('resize',size); requestAnimationFrame(draw);
+})();
+</script>
+
+</body>
+</html>
